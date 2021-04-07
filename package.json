@@ -1,6 +1,6 @@
 {
   "name": "@scastro37/prettier-config",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Prettier Config",
   "main": "index.js",
   "keywords": [
@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/scastro37/prettier-config/issues"
   },
-  "homepage": "https://github.com/scastro37/prettier-config#readme"
+  "homepage": "https://github.com/scastro37/prettier-config#readme",
+  "dependencies": {
+    "mrm-core": "^6.0.0"
+  }
 }
