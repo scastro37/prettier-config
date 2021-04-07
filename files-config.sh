@@ -36,6 +36,7 @@ else
   printf "${ESLINT} %s\n" > .eslintrc.js
   #Config setting.json
   mkdir ../.vscode
-  printf "${SETTINGS} %s\n" > .vscode/settings.json
-  echo $TYPE;
+  printf "${SETTINGS} %s\n" >> .vscode/settings.json
+  
+  npx mrm lint-staged
 fi
