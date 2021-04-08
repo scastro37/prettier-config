@@ -39,4 +39,5 @@ else
   printf "${SETTINGS} %s\n" >> .vscode/settings.json
   
   npx mrm lint-staged
+  node ./node_modules/@scastro37/prettier-config/mrm-config
 fi
