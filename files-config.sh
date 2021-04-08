@@ -35,8 +35,14 @@ else
   printf "${PRETTIER} %s\n" > .prettierrc
   printf "${ESLINT} %s\n" > .eslintrc.js
   #Config setting.json
-  mkdir ../.vscode
-  printf "${SETTINGS} %s\n" >> .vscode/settings.json
+  if [ -d .vscode ]; then 
+    if [ -f .vscode/settings.json ]; then
+      printf "${SETTINGS} %s\n" >> .vscode/settings.json; 
+    else printf "${SETTINGS} %s\n" > .vscode/settings.json; fi;
+  else 
+    mkdir .vscode
+    printf "${SETTINGS} %s\n" > .vscode/settings.json;
+  fi;
   
   npx mrm lint-staged
   node ./node_modules/@scastro37/prettier-config/mrm-config
