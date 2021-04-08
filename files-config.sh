@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 if [[ -z "$1" ]]; then
   echo "ERROR!!!!!";
-  echo "Pleace define if it is type 'JS' or 'TS'";
+  echo "Please define if it is type 'JS' or 'TS'";
 else
   if [ $1 == 'js' ] || [ $1 == 'JS']; then
     TYPE='"@scastro37/eslint-config/configJS"';
