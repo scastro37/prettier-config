@@ -19,7 +19,7 @@ else
   if [ -f .prettierrc ];then rm .prettierrc;fi
   if [ -f .prettier.config.js ];then rm .prettier.config.js;fi
   if [ -f .prettier.config.json ];then rm .prettier.config.json;fi
-  npm i eslint@7.23.0 @scastro37/eslint-config -D
+  npm i eslint@7.23.0 @scastro37/eslint-config husky@6.0.0 -D
   ESLINT="module.exports = {extends: [${TYPE}]};"
   PRETTIER='"@scastro37/prettier-config"'
   SETTINGS='{
@@ -35,6 +35,7 @@ else
   printf "${PRETTIER} %s\n" > .prettierrc
   printf "${ESLINT} %s\n" > .eslintrc.js
   #Config setting.json
+  node ./node_modules/@scastro37/prettier-config/mrm-config
   if [ -d .vscode ]; then 
     if [ -f .vscode/settings.json ]; then
       printf "${SETTINGS} %s\n" >> .vscode/settings.json; 
@@ -43,7 +44,16 @@ else
     mkdir .vscode
     printf "${SETTINGS} %s\n" > .vscode/settings.json;
   fi;
-  
-  npx mrm lint-staged
-  node ./node_modules/@scastro37/prettier-config/mrm-config
+
+  RUTA=$( pwd )
+  while [[ $COUNT -ne 6 ]]
+  do
+    if [ -d .git ]; then
+      npx husky install
+      npx husky add .husky/pre-commit "cd $RUTA && npx lint-staged"
+      COUNT=$((5))
+    else
+      cd ..; fi
+    COUNT=$(($COUNT+1))
+  done
 fi
