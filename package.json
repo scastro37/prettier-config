@@ -1,6 +1,6 @@
 {
   "name": "@scastro37/prettier-config",
-  "version": "1.0.22",
+  "version": "1.0.23",
   "description": "Prettier Config",
   "main": "index.js",
   "keywords": [

@@ -21,6 +21,6 @@ json('.vscode/settings.json')
       })
   .save();
 
-const ignore = ['public', 'node_modules', 'dist', 'lib'];  
+const ignore = ['.*', 'public', 'node_modules', 'dist', 'lib'];  
 lines('.prettierignore').set(ignore).save();
 lines('.eslintignore').set(ignore).save();
