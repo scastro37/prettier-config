@@ -4,6 +4,7 @@ packageJson()
   .unset('lint-staged')
   .setScript('lint', 'eslint --fix')
   .setScript('format', 'prettier --write')
+  .setScript('lint-global', 'eslint . --fix && prettier . --write')
   .set('lint-staged', { '*.{js,jsx,ts,tsx}': ['npm run lint', 'npm run format'] })
   .save();
 
