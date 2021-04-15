@@ -1,4 +1,5 @@
 This module provides useful help to configure Prettier rules in the project
+
 See official documentation [here](https://prettier.io).
 
 ## Compatibility
