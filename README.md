@@ -2,7 +2,7 @@
 
 - npm v7 or higher.
 
-### How to use it
+## How to use it
 To use the library you just need to follow the following steps:
 
 - Install the library with npm
