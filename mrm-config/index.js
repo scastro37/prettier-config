@@ -5,7 +5,7 @@ packageJson()
   .setScript('lint', 'eslint . --fix')
   .setScript('format', 'prettier "**/*.{js,jsx,ts,tsx}" --write')
   .setScript('lint-global', 'echo "Prettier is running..." && prettier "**/*.{js,jsx,ts,tsx}" --write && echo "ESlint is running..." && eslint .')
-  .set('lint-staged', { '*.{js,jsx,ts,tsx}': ['eslint', 'prettier --write'] })
+  .set('lint-staged', { '*.{js,jsx,ts,tsx}': ['eslint --fix', 'prettier --write'] })
   .save();
 
 json('.vscode/settings.json')
