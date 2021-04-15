@@ -1,4 +1,4 @@
-This module provides useful help to configure Prettier rules in the project
+This module uses Prettier rules for code formatting. It helps to format the code in our project, using already defined rules, in a simple way that can be used in different projects.
 
 See official documentation [here](https://prettier.io).
 
@@ -14,6 +14,14 @@ To use the library you just need to follow the following steps:
 npm i @scastro37/prettier-config
 ```
 - Create the file config # .prettierrc and import the library:
+```js
+├── Example Proyect
+    ├── node_modules
+    ├── src
+    ├── package-lock.json
+    ├── package.json
+    └── .prettierrc
+```
 ```js
 "@scastro37/prettier-config";
 ```
